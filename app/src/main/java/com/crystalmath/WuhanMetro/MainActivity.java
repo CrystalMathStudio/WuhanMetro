@@ -1,8 +1,10 @@
 package com.crystalmath.WuhanMetro;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -25,5 +27,19 @@ public class MainActivity extends AppCompatActivity {
 
         navigationView = findViewById(R.id.bottom_navi);
         navigationView.setItemIconTintList(null);
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.menu_home:
+                        break;
+                    case R.id.menu_set:
+                        break;
+                    case R.id.menu_my:
+                        break;
+                }
+                return true;
+            }
+        });
     }
 }

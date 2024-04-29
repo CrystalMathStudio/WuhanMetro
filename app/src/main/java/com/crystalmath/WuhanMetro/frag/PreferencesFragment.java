@@ -1,4 +1,4 @@
-package com.crystalmath.WuhanMetro;
+package com.crystalmath.WuhanMetro.frag;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.crystalmath.WuhanMetro.R;
 
 /**
  * A simple {@link Fragment} subclass.
