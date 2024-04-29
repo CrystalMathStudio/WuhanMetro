@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 /*
 当前任务列表：
 1. 对接地图SDK，建议百度地图
@@ -13,9 +16,14 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
+    private BottomNavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        navigationView = findViewById(R.id.bottom_navi);
+        navigationView.setItemIconTintList(null);
     }
 }
