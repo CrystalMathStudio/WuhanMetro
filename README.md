@@ -11,6 +11,7 @@ buildToolsVersion "30.0.0"
 targetSdkVersion 30
 ```
 
-Gradle：5.6.4
+Gradle Plugin：4.2.2
+Gradle：6.7.1
 
 Java版本：1.8
