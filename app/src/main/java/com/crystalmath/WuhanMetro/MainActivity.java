@@ -1,12 +1,9 @@
 package com.crystalmath.WuhanMetro;
 
-import androidx.annotation.NonNull;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /*
@@ -26,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         navigationView = findViewById(R.id.bottom_navi);
+
         navigationView.setItemIconTintList(null);
         navigationView.setOnNavigationItemSelectedListener(menuItem -> {
             switch (menuItem.getItemId()){
