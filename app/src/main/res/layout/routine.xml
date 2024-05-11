@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#E4E1E1">
 
     <androidx.cardview.widget.CardView
@@ -89,6 +90,194 @@
                     android:textSize="10dp" />
                 <TextView
                     android:id="@+id/content7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:text="华中科技大学站上车"
+                    android:textColor="#9E9696"
+                    android:textSize="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/content21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30分钟"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/content22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#DF5454"
+                    android:padding="5dp"
+                    android:text="2号线"
+                    android:textColor="#ffff"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/content23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#DF5454"
+                    android:padding="5dp"
+                    android:text="2号线"
+                    android:textColor="#ffff"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/content24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#DF5454"
+                    android:padding="5dp"
+                    android:text="2号线"
+                    android:textColor="#ffff"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/content25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:text="9站"
+                    android:textColor="#9E9696"
+                    android:textSize="10dp" />
+                <TextView
+                    android:id="@+id/content26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:text="6元"
+                    android:textColor="#9E9696"
+                    android:textSize="10dp" />
+                <TextView
+                    android:id="@+id/content27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:text="华中科技大学站上车"
+                    android:textColor="#9E9696"
+                    android:textSize="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/content31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30分钟"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/content32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#DF5454"
+                    android:padding="5dp"
+                    android:text="2号线"
+                    android:textColor="#ffff"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/content33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#DF5454"
+                    android:padding="5dp"
+                    android:text="2号线"
+                    android:textColor="#ffff"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/content34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#DF5454"
+                    android:padding="5dp"
+                    android:text="2号线"
+                    android:textColor="#ffff"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/content35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:text="9站"
+                    android:textColor="#9E9696"
+                    android:textSize="10dp" />
+                <TextView
+                    android:id="@+id/content36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:text="6元"
+                    android:textColor="#9E9696"
+                    android:textSize="10dp" />
+                <TextView
+                    android:id="@+id/content37"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"

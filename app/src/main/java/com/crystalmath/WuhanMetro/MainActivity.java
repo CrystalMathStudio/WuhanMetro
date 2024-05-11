@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     Fragment fragment1 = new BaiduMapFragment();
     Fragment fragment2 = new MyFragment();
     Fragment fragment3 = new PreferencesFragment();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        replaceFragment(fragment1);
     }
 
     private void replaceFragment(Fragment fragment) {
