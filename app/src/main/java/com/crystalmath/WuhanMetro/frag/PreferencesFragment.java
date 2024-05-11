@@ -2,13 +2,18 @@ package com.crystalmath.WuhanMetro.frag;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.crystalmath.WuhanMetro.R;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,6 +60,34 @@ public class PreferencesFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ChipGroup chipGroup = view.findViewById(R.id.chip_group);
+        Chip chip1=view.findViewById(R.id.chip1);
+        Chip chip2=view.findViewById(R.id.chip2);
+        Chip chip3=view.findViewById(R.id.chip3);
+        Log.d(getClass().toString(), "Chip Test");
+        chip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(getClass().toString(), "Chip #1");
+            }
+        });
+        chip2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(getClass().toString(), "Chip #2");
+            }
+        });
+        chip3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(getClass().toString(), "Chip #3");
+            }
+        });
     }
 
     @Override

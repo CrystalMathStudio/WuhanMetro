@@ -1,26 +1,340 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".frag.PreferencesFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:singleSelection="true">
+
+        <!-- 添加Chip视图 -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间最短"
+            app:chipBackgroundColor="#ffffff"
+            app:chipStrokeColor="#fff000"
+            app:chipStrokeWidth="2dp"
+            />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="换乘最短"
+            app:chipBackgroundColor="#ffffff"
+            app:chipStrokeColor="#fff000"
+            app:chipStrokeWidth="2dp"
+            />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="花费最少"
+            app:chipBackgroundColor="#ffffff"
+            app:chipStrokeColor="#fff000"
+            app:chipStrokeWidth="2dp"
+            />
+    </com.google.android.material.chip.ChipGroup>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:background="#E4E1E1">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/content1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30分钟"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/content2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="#DF5454"
+                        android:padding="5dp"
+                        android:text="2号线"
+                        android:textColor="#ffff"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/content3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="#DF5454"
+                        android:padding="5dp"
+                        android:text="2号线"
+                        android:textColor="#ffff"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/content4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="#DF5454"
+                        android:padding="5dp"
+                        android:text="2号线"
+                        android:textColor="#ffff"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/content5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:padding="5dp"
+                        android:text="9站"
+                        android:textColor="#9E9696"
+                        android:textSize="10dp" />
+                    <TextView
+                        android:id="@+id/content6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:padding="5dp"
+                        android:text="6元"
+                        android:textColor="#9E9696"
+                        android:textSize="10dp" />
+                    <TextView
+                        android:id="@+id/content7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:padding="5dp"
+                        android:text="华中科技大学站上车"
+                        android:textColor="#9E9696"
+                        android:textSize="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/content21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30分钟"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/content22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="#DF5454"
+                        android:padding="5dp"
+                        android:text="2号线"
+                        android:textColor="#ffff"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/content23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="#DF5454"
+                        android:padding="5dp"
+                        android:text="2号线"
+                        android:textColor="#ffff"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/content24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="#DF5454"
+                        android:padding="5dp"
+                        android:text="2号线"
+                        android:textColor="#ffff"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/content25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:padding="5dp"
+                        android:text="9站"
+                        android:textColor="#9E9696"
+                        android:textSize="10dp" />
+                    <TextView
+                        android:id="@+id/content26"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:padding="5dp"
+                        android:text="6元"
+                        android:textColor="#9E9696"
+                        android:textSize="10dp" />
+                    <TextView
+                        android:id="@+id/content27"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:padding="5dp"
+                        android:text="华中科技大学站上车"
+                        android:textColor="#9E9696"
+                        android:textSize="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/content31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30分钟"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/content32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="#DF5454"
+                        android:padding="5dp"
+                        android:text="2号线"
+                        android:textColor="#ffff"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/content33"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="#DF5454"
+                        android:padding="5dp"
+                        android:text="2号线"
+                        android:textColor="#ffff"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/content34"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="#DF5454"
+                        android:padding="5dp"
+                        android:text="2号线"
+                        android:textColor="#ffff"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/content35"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:padding="5dp"
+                        android:text="9站"
+                        android:textColor="#9E9696"
+                        android:textSize="10dp" />
+                    <TextView
+                        android:id="@+id/content36"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:padding="5dp"
+                        android:text="6元"
+                        android:textColor="#9E9696"
+                        android:textSize="10dp" />
+                    <TextView
+                        android:id="@+id/content37"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:padding="5dp"
+                        android:text="华中科技大学站上车"
+                        android:textColor="#9E9696"
+                        android:textSize="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:background="#2196F3"
-        android:text="路线"
-        android:textColor="#FFFFFF" />
+    </LinearLayout>
 
-
-</FrameLayout>
+</LinearLayout>
