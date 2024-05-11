@@ -38,7 +38,7 @@
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:layout_weight="0"
-            android:background="#fffff"
+            android:background="#ffffff"
             android:layout_marginHorizontal="5dp"
             android:text="搜索"
             android:textColor="#1487FD"

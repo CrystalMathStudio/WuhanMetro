@@ -11,16 +11,17 @@ import com.baidu.mapapi.common.BaiduMapSDKException;
 
 public class MainApplication extends Application {
 
-    public static String TAG = "com.crystalmath.WuhanMetro.MainApplication";
+    public static final String TAG = "com.crystalmath.WuhanMetro.MainApplication";
 
-    public static String SP_NAME = "privacy";
-    public static String SP_KEY = "ifAgree";
+    public static final String SP_NAME = "privacy";
+    public static final String SP_KEY = "ifAgree";
 
     @Override
     public void onCreate() {
         super.onCreate();
         // 在使用 SDK 各组间之前初始化 context 信息，传入 ApplicationContext
         // 默认隐私政策接口初始化方法
+
         SharedPreferences sp = getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);
         boolean ifAgree = sp.getBoolean(SP_KEY, false);
         if (ifAgree) {

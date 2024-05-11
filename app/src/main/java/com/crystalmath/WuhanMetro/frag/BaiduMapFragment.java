@@ -1,19 +1,32 @@
 package com.crystalmath.WuhanMetro.frag;
 
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.BitmapDescriptor;
+import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.MarkerOptions;
+import com.baidu.mapapi.map.Overlay;
+import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.map.TextureMapView;
 import com.crystalmath.WuhanMetro.R;
+import com.crystalmath.WuhanMetro.subway.SubwayInfo;
+import com.crystalmath.WuhanMetro.subway.SubwayLine;
+import com.crystalmath.WuhanMetro.subway.SubwayStation;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,6 +46,7 @@ public class BaiduMapFragment extends Fragment {
 
     public MapView mapView;
     public BaiduMap baiduMap;
+    private LocationClient locationClient;
 
     public BaiduMapFragment() {
         // Required empty public constructor
@@ -71,7 +85,33 @@ public class BaiduMapFragment extends Fragment {
         mapView = (MapView) view.findViewById(R.id.bmapView);
         baiduMap = mapView.getMap();
 
+        mapView.onCreate(view.getContext(), savedInstanceState);
 
+        try {
+            LocationClient.setAgreePrivacy(true);
+            locationClient = new LocationClient(getContext());
+
+            LocationClientOption option = new LocationClientOption();
+            option.setOpenGnss(true);
+            option.setCoorType("bd09ll"); // 设置坐标类型
+            option.setScanSpan(1000);
+
+            locationClient.setLocOption(option);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        for (SubwayLine line : SubwayInfo.lineMap.values()){
+            BitmapDescriptor bitmap = BitmapDescriptorFactory
+                    .fromResource(R.drawable.subway);
+
+            for (SubwayStation station : line.stations){
+                OverlayOptions options = new MarkerOptions()
+                        .position(station.latLng)
+                        .icon(bitmap);
+                baiduMap.addOverlay(options);
+            }
+        }
     }
 
     @Override
@@ -79,5 +119,26 @@ public class BaiduMapFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_baidu_map, container, false);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mapView.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mapView.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        locationClient.stop();
+        baiduMap.setMyLocationEnabled(false);
+        mapView.onDestroy();
+        mapView = null;
+        super.onDestroy();
     }
 }
