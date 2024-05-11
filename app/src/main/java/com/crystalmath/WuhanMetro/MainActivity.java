@@ -1,12 +1,12 @@
 package com.crystalmath.WuhanMetro;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
-
-import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.crystalmath.WuhanMetro.frag.BaiduMapFragment;
 import com.crystalmath.WuhanMetro.frag.MyFragment;
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         fragmentContainer = findViewById(R.id.fragmentContainerView);
         navigationView = findViewById(R.id.bottom_navi);
+
         navigationView.setItemIconTintList(null);
 
         getSupportFragmentManager().beginTransaction()
