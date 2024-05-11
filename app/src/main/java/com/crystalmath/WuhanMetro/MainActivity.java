@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
 
+import com.baidu.mapapi.model.LatLng;
 import com.crystalmath.WuhanMetro.frag.BaiduMapFragment;
 import com.crystalmath.WuhanMetro.frag.MyFragment;
 import com.crystalmath.WuhanMetro.frag.PreferencesFragment;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentContainerView fragmentContainer;
     Fragment fragment1 = new BaiduMapFragment();
     Fragment fragment2 = new MyFragment();
-    Fragment fragment3=new PreferencesFragment();
+    Fragment fragment3 = new PreferencesFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
