@@ -2,6 +2,8 @@ package com.crystalmath.WuhanMetro.frag;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.crystalmath.WuhanMetro.R;
@@ -61,13 +64,11 @@ public class SearchFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_search, container, false);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         // 获取搜索框和搜索按钮的引用
-        EditText searchBox = view.findViewById(R.id.search);
+        SearchView searchBox = view.findViewById(R.id.search);
         Button searchButton = view.findViewById(R.id.button);
 
         // 设置搜索按钮的点击事件监听器
@@ -75,28 +76,20 @@ public class SearchFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // 获取搜索框中的文本
-                String searchText = searchBox.getText().toString();
+                String searchText = searchBox.getQuery().toString();
 
                 // TODO: 在这里执行搜索操作，例如显示搜索结果
                 // 这里只是一个简单的示例，您可以根据实际需求进行更复杂的搜索逻辑
                 Toast.makeText(getActivity(), "正在搜索：" + searchText, Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
-        // 设置搜索框的焦点监听器，在搜索框获得焦点时显示光标
-        searchBox.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                // 如果搜索框获得焦点，则将光标显示出来
-                if (hasFocus) {
-                    searchBox.setCursorVisible(true);
-                } else {
-                    searchBox.setCursorVisible(false);
-                }
-            }
-        });
-
-        return view;
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_search, container, false);
     }
 
 }

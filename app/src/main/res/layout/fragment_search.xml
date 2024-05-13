@@ -14,7 +14,9 @@
         android:layout_height="60dp"
         android:background="@drawable/search_view_bg"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="8dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <SearchView
@@ -24,10 +26,11 @@
             android:layout_weight="2"
             android:accessibilityPaneTitle="搜索"
             android:clickable="true"
-            android:tag="搜索"
-            android:tooltipText="搜索"
             android:focusable="true"
-            android:focusableInTouchMode="true">
+            android:focusableInTouchMode="true"
+            android:iconifiedByDefault="false"
+            android:tag="搜索"
+            android:tooltipText="搜索">
 
 
         </SearchView>
@@ -37,9 +40,9 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="60dp"
             android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
             android:layout_weight="0"
             android:background="#ffffff"
-            android:layout_marginHorizontal="5dp"
             android:text="搜索"
             android:textColor="#1487FD"
             android:textSize="20dp"

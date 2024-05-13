@@ -12,6 +12,7 @@ import com.baidu.mapapi.model.LatLng;
 import com.crystalmath.WuhanMetro.frag.BaiduMapFragment;
 import com.crystalmath.WuhanMetro.frag.MyFragment;
 import com.crystalmath.WuhanMetro.frag.PreferencesFragment;
+import com.crystalmath.WuhanMetro.frag.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /*
@@ -26,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView navigationView;
     private FragmentContainerView fragmentContainer;
     Fragment fragment1 = new BaiduMapFragment();
-    Fragment fragment2 = new MyFragment();
+    Fragment fragment2 = new SearchFragment();
     Fragment fragment3 = new PreferencesFragment();
+    Fragment fragment4 = new MyFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 .add(R.id.fragmentContainerView, fragment1)
                 .add(R.id.fragmentContainerView, fragment2)
                 .add(R.id.fragmentContainerView, fragment3)
+                .add(R.id.fragmentContainerView, fragment4)
                         .commit();
 
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -52,11 +55,14 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menu_home:
                         replaceFragment(fragment1);
                         break;
-                    case R.id.menu_set:
+                    case R.id.menu_search:
                         replaceFragment(fragment2);
                         break;
-                    case R.id.menu_my:
+                    case R.id.menu_set:
                         replaceFragment(fragment3);
+                        break;
+                    case R.id.menu_my:
+                        replaceFragment(fragment4);
                         break;
                 }
                 return true;
