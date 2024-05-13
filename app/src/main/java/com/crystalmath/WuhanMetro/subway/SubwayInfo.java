@@ -2,6 +2,8 @@ package com.crystalmath.WuhanMetro.subway;
 
 import android.util.Pair;
 
+import com.crystalmath.WuhanMetro.R;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,7 +37,7 @@ public class SubwayInfo {
         lineMap = new HashMap<>();
         transferStat = new ArrayList<>();
 
-        SubwayLine line1 = new SubwayLine(1);
+        SubwayLine line1 = new SubwayLine(1, R.color.line_1);
         line1.add(new SubwayStation("汉口北", "420100034364030", 30.711953, 114.329481));
         line1.add(new SubwayStation("滠口新城", "420100034364029", 30.684553, 114.342372));
         line1.add(new SubwayStation("滕子岗", "420100034364028", 30.674527, 114.341474));
@@ -69,7 +71,7 @@ public class SubwayInfo {
         line1.add(new SubwayStation("三店", "420100034364032", 30.649056, 114.120804));
         line1.add(new SubwayStation("径河", "420100034364031", 30.659055, 114.120828));
 
-        SubwayLine line11 = new SubwayLine(11);
+        SubwayLine line11 = new SubwayLine(11, R.color.line_11);
         line11.add(new SubwayStation("武汉东站", "420100024404035", 30.486956, 114.431755));
         line11.add(new SubwayStation("湖口", "900000073743002", 30.487938, 114.448734));
         line11.add(new SubwayStation("光谷同济医院", "900000073743003", 30.485267, 114.466409));
@@ -85,7 +87,7 @@ public class SubwayInfo {
         line11.add(new SubwayStation("左岭", "900000073743013", 30.488119, 114.620662));
         line11.add(new SubwayStation("葛店南站", "900000073743014", 30.48932, 114.660675));
 
-        SubwayLine line16 = new SubwayLine(16);
+        SubwayLine line16 = new SubwayLine(16, R.color.line_16);
         line16.add(new SubwayStation("国博中心南", "420100024335006", 30.506036, 114.236109));
         line16.add(new SubwayStation("老关村", "420100024335005", 30.49291, 114.225922));
         line16.add(new SubwayStation("南太子湖", "900000090803010", 30.476763, 114.220062));
@@ -101,7 +103,7 @@ public class SubwayInfo {
         line16.add(new SubwayStation("纱帽", "900000090803014", 30.280258, 114.052174));
         line16.add(new SubwayStation("通航机场", "900000090803013", 30.269699, 114.062984));
 
-        SubwayLine line19 = new SubwayLine(19);
+        SubwayLine line19 = new SubwayLine(19, R.color.line_19);
         line19.add(new SubwayStation("新月溪公园", "900000115789006", 30.47636, 114.502879));
         line19.add(new SubwayStation("光谷五路", "900000073743006", 30.485101, 114.502876));
         line19.add(new SubwayStation("花山河", "900000115789004", 30.541243, 114.512443));
@@ -110,7 +112,7 @@ public class SubwayInfo {
         line19.add(new SubwayStation("武东", "900000115789002", 30.578433, 114.457159));
         line19.add(new SubwayStation("武汉站西广场", "900000115789001", 30.604844, 114.422911));
 
-        SubwayLine line2 = new SubwayLine(2);
+        SubwayLine line2 = new SubwayLine(2, R.color.line_2);
         line2.add(new SubwayStation("佛祖岭", "420100024404030", 30.438671, 114.439777));
         line2.add(new SubwayStation("藏龙东街", "420100024404031", 30.437026, 114.429655));
         line2.add(new SubwayStation("秀湖", "420100024404032", 30.447747, 114.421034));
@@ -150,7 +152,7 @@ public class SubwayInfo {
         line2.add(new SubwayStation("航空总部", "420100024404028", 30.732481, 114.227261));
         line2.add(new SubwayStation("天河机场", "420100024404029", 30.770624, 114.216618));
 
-        SubwayLine line21 = new SubwayLine(21);
+        SubwayLine line21 = new SubwayLine(21, R.color.line_21);
         line21.add(new SubwayStation("后湖大道", "420100024331004", 30.650284, 114.304127));
         line21.add(new SubwayStation("百步亭花园路", "900000075739018", 30.654377, 114.315485));
         line21.add(new SubwayStation("新荣", "420100034364026", 30.657595, 114.332763));
@@ -168,7 +170,7 @@ public class SubwayInfo {
         line21.add(new SubwayStation("施岗", "900000075739031", 30.706234, 114.600916));
         line21.add(new SubwayStation("金台", "900000075739032", 30.713671, 114.619116));
 
-        SubwayLine line3 = new SubwayLine(3);
+        SubwayLine line3 = new SubwayLine(3, R.color.line_3);
         line3.add(new SubwayStation("沌阳大道", "420100024331025", 30.489376, 114.157139));
         line3.add(new SubwayStation("东风公司", "420100024331024", 30.500107, 114.166088));
         line3.add(new SubwayStation("体育中心", "420100024331023", 30.506039, 114.170981));
@@ -194,7 +196,7 @@ public class SubwayInfo {
         line3.add(new SubwayStation("市民之家", "420100024331003", 30.661297, 114.296806));
         line3.add(new SubwayStation("宏图大道", "420100024331002", 30.670353, 114.277759));
 
-        SubwayLine line4 = new SubwayLine(4);
+        SubwayLine line4 = new SubwayLine(4, R.color.line_4);
         line4.add(new SubwayStation("柏林", "420100034395030", 30.582229, 113.994891));
         line4.add(new SubwayStation("新庙村", "420100034395031", 30.579826, 114.009379));
         line4.add(new SubwayStation("临嶂大道", "420100034395032", 30.57179, 114.02859));
@@ -233,7 +235,7 @@ public class SubwayInfo {
         line4.add(new SubwayStation("杨春湖", "420100034395015", 30.6053, 114.416353));
         line4.add(new SubwayStation("武汉火车站", "420100034395016", 30.607375, 114.424376));
 
-        SubwayLine line5 = new SubwayLine(5);
+        SubwayLine line5 = new SubwayLine(5, R.color.line_5);
         line5.add(new SubwayStation("红霞", "900000068659027", 30.430968, 114.261845));
         line5.add(new SubwayStation("黄家湖(武科大)", "900000068659028", 30.443094, 114.262835));
         line5.add(new SubwayStation("中医药大学", "900000068659001", 30.453717, 114.268778));
@@ -262,7 +264,7 @@ public class SubwayInfo {
         line5.add(new SubwayStation("厂前", "900000068659025", 30.611409, 114.434239));
         line5.add(new SubwayStation("武汉站东广场", "900000068659026", 30.606713, 114.426897));
 
-        SubwayLine line6 = new SubwayLine(6);
+        SubwayLine line6 = new SubwayLine(6, R.color.line_6);
         line6.add(new SubwayStation("新城十一路", "420100024335033", 30.632773, 114.109439));
         line6.add(new SubwayStation("码头潭公园", "420100024335032", 30.631684, 114.123644));
         line6.add(new SubwayStation("五环体育中心", "420100024335031", 30.634026, 114.136902));
@@ -296,7 +298,7 @@ public class SubwayInfo {
         line6.add(new SubwayStation("车城东路", "420100024335003", 30.495551, 114.179988));
         line6.add(new SubwayStation("东风公司", "420100024331024", 30.500107, 114.166088));
 
-        SubwayLine line7 = new SubwayLine(7);
+        SubwayLine line7 = new SubwayLine(7, R.color.line_7);
         line7.add(new SubwayStation("横店", "900000044148028", 30.804287, 114.289753));
         line7.add(new SubwayStation("裕福路", "900000044148029", 30.785748, 114.278294));
         line7.add(new SubwayStation("天阳大道", "900000044148030", 30.765499, 114.270219));
@@ -331,7 +333,7 @@ public class SubwayInfo {
         line7.add(new SubwayStation("纸坊大街", "900000044148026", 30.344775, 114.324577));
         line7.add(new SubwayStation("青龙山地铁小镇", "900000044148027", 30.3188, 114.334041));
 
-        SubwayLine line8 = new SubwayLine(8);
+        SubwayLine line8 = new SubwayLine(8, R.color.line_8);
         line8.add(new SubwayStation("金潭路", "900000044147001", 30.6772, 114.28404));
         line8.add(new SubwayStation("宏图大道", "420100024331002", 30.670353, 114.277759));
         line8.add(new SubwayStation("塔子湖", "900000044147003", 30.652594, 114.280364));

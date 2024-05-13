@@ -1,12 +1,11 @@
 package com.crystalmath.WuhanMetro.frag;
 
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -18,15 +17,21 @@ import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
+import com.baidu.mapapi.map.MapStatusUpdate;
+import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MarkerOptions;
-import com.baidu.mapapi.map.Overlay;
 import com.baidu.mapapi.map.OverlayOptions;
-import com.baidu.mapapi.map.TextureMapView;
+import com.baidu.mapapi.map.PolylineOptions;
+import com.baidu.mapapi.model.LatLng;
 import com.crystalmath.WuhanMetro.R;
 import com.crystalmath.WuhanMetro.subway.SubwayInfo;
 import com.crystalmath.WuhanMetro.subway.SubwayLine;
 import com.crystalmath.WuhanMetro.subway.SubwayStation;
+import com.crystalmath.WuhanMetro.util.Graphics;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -101,17 +106,36 @@ public class BaiduMapFragment extends Fragment {
             throw new RuntimeException(e);
         }
 
+        MapStatusUpdate updateGeo = MapStatusUpdateFactory.newLatLng(new LatLng(30.59, 114.30));
+        baiduMap.setMapStatus(updateGeo);
+
+        List<OverlayOptions> options = new ArrayList<>();
+        Bitmap subwayBitmap = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.subway2), 48, 48, true);
         for (SubwayLine line : SubwayInfo.lineMap.values()){
-            BitmapDescriptor bitmap = BitmapDescriptorFactory
-                    .fromResource(R.drawable.subway);
+            int color = getResources().getColor(line.color);
+
+            Bitmap lineBitmap = Graphics.makeTintBitmap(subwayBitmap, color);
+            BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromBitmap(lineBitmap);
+
+            List<LatLng> linePoints = new ArrayList<>();
 
             for (SubwayStation station : line.stations){
-                OverlayOptions options = new MarkerOptions()
+                linePoints.add(station.latLng);
+                OverlayOptions option = new MarkerOptions()
                         .position(station.latLng)
-                        .icon(bitmap);
-                baiduMap.addOverlay(options);
+                        .icon(bitmapDescriptor)
+                        .perspective(true)
+                        .anchor(0.5f, 0.5f);
+                options.add(option);
             }
+
+            OverlayOptions polyline = new PolylineOptions()
+                    .width(5)
+                    .color(color)
+                    .points(linePoints);
+            options.add(polyline);
         }
+        baiduMap.addOverlays(options);
     }
 
     @Override
