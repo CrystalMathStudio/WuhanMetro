@@ -125,6 +125,7 @@ public class BaiduMapFragment extends Fragment {
                         .position(station.latLng)
                         .icon(bitmapDescriptor)
                         .perspective(true)
+                        .title(station.name)
                         .anchor(0.5f, 0.5f);
                 options.add(option);
             }

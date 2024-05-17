@@ -9,8 +9,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -31,6 +34,10 @@ public class SearchFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    SearchView searchBox;
+    Button searchButton;
+    ListView listView;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -68,19 +75,33 @@ public class SearchFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // 获取搜索框和搜索按钮的引用
-        SearchView searchBox = view.findViewById(R.id.search);
-        Button searchButton = view.findViewById(R.id.button);
+        searchBox = view.findViewById(R.id.search);
+        searchButton = view.findViewById(R.id.button);
+        listView = view.findViewById(R.id.searchList);
 
-        // 设置搜索按钮的点击事件监听器
-        searchButton.setOnClickListener(new View.OnClickListener() {
+        String[] data = {"测试站", "地铁站", "哈哈哈"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, data);
+        listView.setAdapter(adapter);
+        listView.setTextFilterEnabled(true);
+
+        searchBox.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void onClick(View v) {
-                // 获取搜索框中的文本
-                String searchText = searchBox.getQuery().toString();
+            public boolean onQueryTextSubmit(String s) {
+                adapter.getFilter().filter(s);
+                return true;
+            }
 
-                // TODO: 在这里执行搜索操作，例如显示搜索结果
-                // 这里只是一个简单的示例，您可以根据实际需求进行更复杂的搜索逻辑
-                Toast.makeText(getActivity(), "正在搜索：" + searchText, Toast.LENGTH_SHORT).show();
+            @Override
+            public boolean onQueryTextChange(String s) {
+                adapter.getFilter().filter(s);
+                return true;
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
             }
         });
     }

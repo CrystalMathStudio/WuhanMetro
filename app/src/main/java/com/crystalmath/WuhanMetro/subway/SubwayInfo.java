@@ -1,7 +1,5 @@
 package com.crystalmath.WuhanMetro.subway;
 
-import android.util.Pair;
-
 import com.crystalmath.WuhanMetro.R;
 
 import java.util.ArrayList;
@@ -12,21 +10,21 @@ import java.util.Map;
 public class SubwayInfo {
     public static Map<Integer, SubwayLine> lineMap;
     public static List<TransferStation> transferStat;
+    public static Map<String, List<SubwayStation>> stationMap = new HashMap<>();
 
     private static void calcTransfers(){
-        Map<String, List<SubwayStation>> map = new HashMap<>();
         SubwayLine[] lines = lineMap.values().toArray(new SubwayLine[0]);
 
         for (int i = 0; i < lines.length; i++){
             for (int j = 0; j < lines[i].stations.size(); j++){
                 SubwayStation station = lines[i].stations.get(j);
-                List<SubwayStation> list = map.getOrDefault(station.name, new ArrayList<>());
+                List<SubwayStation> list = stationMap.getOrDefault(station.name, new ArrayList<>());
                 list.add(station);
-                map.put(station.name, list);
+                stationMap.put(station.name, list);
             }
         }
 
-        for (List<SubwayStation> list : map.values()){
+        for (List<SubwayStation> list : stationMap.values()){
             if (list.size() > 1){
                 transferStat.add(TransferStation.construct(list));
             }
