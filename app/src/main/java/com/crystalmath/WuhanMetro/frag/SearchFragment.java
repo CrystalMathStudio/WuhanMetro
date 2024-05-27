@@ -1,5 +1,6 @@
 package com.crystalmath.WuhanMetro.frag;
 
+import android.app.Application;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,12 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.crystalmath.WuhanMetro.R;
+import com.crystalmath.WuhanMetro.subway.SubwayInfo;
+import com.crystalmath.WuhanMetro.subway.SubwayLine;
+import com.crystalmath.WuhanMetro.subway.SubwayStation;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -79,8 +86,14 @@ public class SearchFragment extends Fragment {
         searchButton = view.findViewById(R.id.button);
         listView = view.findViewById(R.id.searchList);
 
-        String[] data = {"测试站", "地铁站", "哈哈哈"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, data);
+        List<String> data = new ArrayList<>();
+        for (SubwayLine line : SubwayInfo.lineMap.values()){
+            for (SubwayStation station : line.stations){
+                data.add(station.name + "-" + line.id + "号线");
+            }
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, data.toArray(new String[0]));
         listView.setAdapter(adapter);
         listView.setTextFilterEnabled(true);
 
@@ -101,6 +114,9 @@ public class SearchFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Application app = getActivity().getApplication();
+                String result = data.get((int)id);
+
 
             }
         });
